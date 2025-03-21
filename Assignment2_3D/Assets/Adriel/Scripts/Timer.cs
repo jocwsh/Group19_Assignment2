@@ -4,7 +4,7 @@ public class Timer : MonoBehaviour
 
 
 {
-    private float countdown = 2.0f;
+    private float countdown = 3.0f;
 
 
     // Update is called once per frame
