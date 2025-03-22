@@ -467,7 +467,7 @@ GameObject:
   - component: {fileID: 1647973765}
   - component: {fileID: 1647973764}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Task 2 Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -485,7 +485,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba1569f0e2dbab844a3c9b28237bd0e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sphere: {fileID: 1647973763}
 --- !u!135 &1647973765
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Cube
+  - Capsule
   layers:
   - Default
   - TransparentFX
