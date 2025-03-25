@@ -3,7 +3,6 @@ using System.Collections;
 
 public class coroutine : MonoBehaviour
 {
-    public GameObject Cube;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,9 +17,7 @@ public class coroutine : MonoBehaviour
     }
     IEnumerator wait()
     {
-        Debug.Log("test01");
         yield return new WaitForSeconds(2);
-        Debug.Log("it works");
-        Destroy(GameObject.FindGameObjectWithTag("Cube"));
+        Destroy(this.gameObject);
     }
 }
