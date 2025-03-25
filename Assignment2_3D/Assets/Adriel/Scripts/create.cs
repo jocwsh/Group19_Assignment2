@@ -26,6 +26,6 @@ public class create_and_destroy : MonoBehaviour
 
 
         }
-
+        
     }
 }
