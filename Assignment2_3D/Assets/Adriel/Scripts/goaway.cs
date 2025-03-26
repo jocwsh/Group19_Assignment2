@@ -11,7 +11,7 @@ public class goaway : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             GetComponent<Renderer>().enabled = !GetComponent<Renderer>().enabled;
         }
