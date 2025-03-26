@@ -12,7 +12,6 @@ public class button : MonoBehaviour
 
     public void ButtonClicked()
     {
-        Debug.Log("works");
 
         Object.Instantiate (Cube, new Vector3(0,3,0), Quaternion.identity);
     }
