@@ -18,7 +18,7 @@ public class create_and_destroy : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("itworksbtw");
+
             //Object.Instantiate(Capsule, new Vector3(0,0,0), Quaternion.identity);
 
             Object.Instantiate(Capsule, this.transform.position, Quaternion.identity);
