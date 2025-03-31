@@ -15,6 +15,6 @@ public class cameraFollow : MonoBehaviour
     void Update()
     {
         //transform.position = cube.transform.position;
-        transform.position = cube.transform.position + new Vector3(0, 2, -15);
+        transform.position = cube.transform.position + new Vector3(0, 1, -7);
     }
 }

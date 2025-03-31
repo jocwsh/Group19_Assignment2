@@ -2,9 +2,14 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public float horizontalInput;
-    public float verticalInput;
-    public float turnSpeed = 10;
+
+    private Vector3 playerMovementInput;
+
+    //movement
+    public Rigidbody playerBody;
+    public float moveSpeed;
+    public float jumpForce;
+
 
     void Start()
     {
@@ -15,12 +20,24 @@ public class Movement : MonoBehaviour
     void Update()
     {
 
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
 
-        transform.Translate(Vector3.forward * Time.deltaTime * verticalInput);
-        transform.Translate(-Vector3.right * Time.deltaTime * horizontalInput);
-        //transform.Rotate(Vector3.up * horizontalInput * turnSpeed * Time.deltaTime);
+        playerMovementInput = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
 
+        movePlayer();
+
+    }
+
+    private void movePlayer()
+    {
+        //move player on x and z axis
+        Vector3 MoveVector = transform.TransformDirection(playerMovementInput) * moveSpeed;
+        playerBody.linearVelocity = new Vector3(MoveVector.x, playerBody.linearVelocity.y, MoveVector.z);
+
+
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            playerBody.linearVelocity = new Vector3(playerBody.linearVelocity.x, jumpForce, playerBody.linearVelocity.z);
+        }
     }
 }
