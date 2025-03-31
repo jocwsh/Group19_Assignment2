@@ -31,13 +31,13 @@ public class Movement : MonoBehaviour
     {
         //move player on x and z axis
         Vector3 MoveVector = transform.TransformDirection(playerMovementInput) * moveSpeed;
-        playerBody.linearVelocity = new Vector3(MoveVector.x, playerBody.linearVelocity.y, MoveVector.z);
+        playerBody.velocity = new Vector3(MoveVector.x, playerBody.velocity.y, MoveVector.z);
 
 
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            playerBody.linearVelocity = new Vector3(playerBody.linearVelocity.x, jumpForce, playerBody.linearVelocity.z);
+            playerBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
     }
 }
