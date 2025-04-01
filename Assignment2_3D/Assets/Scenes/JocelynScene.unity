@@ -876,6 +876,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerBody: {fileID: 1706703976}
+  horizontalInput: 10
+  verticalInput: 10
   moveSpeed: 5
   jumpForce: 10
 --- !u!54 &1706703976
