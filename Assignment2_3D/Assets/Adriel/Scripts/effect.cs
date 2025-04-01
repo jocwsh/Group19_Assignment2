@@ -5,7 +5,7 @@ public class effect : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     AudioSource allclear;
-    
+    private bool isplaying = false;
 
     void Start()
     {
@@ -21,10 +21,19 @@ public class effect : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            allclear.loop = true;
-            allclear.Play();
+            isplaying = !isplaying;
+            if (isplaying == true)
+            {
+                allclear.loop = true;
+                allclear.Play();
+            }
+            else
+            {
+            allclear.Stop();
+            }
+        
         }
-
+        
         
     }
 }
