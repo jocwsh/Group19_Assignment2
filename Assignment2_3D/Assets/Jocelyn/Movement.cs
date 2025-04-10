@@ -2,10 +2,9 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-
     private Vector3 playerMovementInput;
 
-    //movement
+    // Movement
     public Rigidbody playerBody;
     public float horizontalInput;
     public float verticalInput;
@@ -13,34 +12,43 @@ public class Movement : MonoBehaviour
     public float jumpForce;
     public bool isGround = true;
 
+    public AudioSource audioSource;
+    public AudioClip jumpSound;
 
     void Start()
     {
-       
+        audioSource = GetComponent<AudioSource>();
     }
 
-    
     void Update()
     {
-
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
-        
-        movePlayer();
 
+        movePlayer();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGround = true;
+        }
     }
 
     private void movePlayer()
     {
-        //move player on x and z axis
-   
+        // Move player on x and z axis
         transform.Translate(Vector3.forward * Time.deltaTime * verticalInput * moveSpeed);
         transform.Translate(-Vector3.left * Time.deltaTime * horizontalInput * moveSpeed);
 
-        //jump
-        if (Input.GetKeyDown(KeyCode.Space))
+        // Jump
+        if (Input.GetKeyDown(KeyCode.Space) && isGround)
         {
             playerBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            audioSource.clip = jumpSound;
+            audioSource.Play();
+            isGround = false;
         }
     }
 }
