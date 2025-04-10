@@ -141,7 +141,8 @@ PlayerSettings:
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
   bundleVersion: 0.1.0
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -922,11 +923,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: e659521a-df68-48b4-b98c-6c374ad1431e
+  cloudProjectId: bc9b2bbb-bf21-491d-91ad-5d96d4111b4f
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Assignment2_3D
-  organizationId: elsomoose
+  projectName: Assignment_2
+  organizationId: jocwsh
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
