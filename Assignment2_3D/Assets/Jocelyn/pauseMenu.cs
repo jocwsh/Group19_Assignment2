@@ -70,10 +70,10 @@ public class pauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
     }
 
-    public void QuitGame()
+    public void Back()
     {
-        Debug.Log("Quitting Game...");
-        Application.Quit();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        Time.timeScale = 1f;
     }
 
 }
