@@ -22,7 +22,6 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        Cursor.visible = false;
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
 
