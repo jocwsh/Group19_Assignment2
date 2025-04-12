@@ -2,6 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class force : MonoBehaviour
 {
     public float speed = 0;
@@ -9,15 +10,17 @@ public class force : MonoBehaviour
     private float movementY;
     private Rigidbody rb;
     public float jumpforce = 1000f;
+    private InputAction reset;
 
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb=GetComponent<Rigidbody>();
+        reset = InputSystem.actions.FindAction("Restart");
     }
 
-    // Update is called once per frame
+    
     void OnMove(InputValue movementValue)
     {
         Vector2 movementVector = movementValue.Get<Vector2>();
@@ -39,10 +42,23 @@ public class force : MonoBehaviour
             rb.AddForce(new Vector2(0f, jumpforce));
         }
 
-        if (Input.GetButtonDown("Restart"))
+
+        if (reset.IsPressed())
+        {
+            rb.linearVelocity = new Vector3(0, 0, 0);
+            
+            rb.position = new Vector3 (0,0.5f,0);
+        
+        }
+
+
+        //This is the old input manager
+    
+        /*if (Input.GetButtonDown("Restart"))
         {
             rb.position = new Vector3 (0,0.5f,0);
         }
+        */
     }
 
 
